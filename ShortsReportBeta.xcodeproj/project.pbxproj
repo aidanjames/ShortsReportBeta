@@ -3,16 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D47869424A3D7580009554A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3D47869324A3D7580009554A /* Lottie */; };
+		3D47869624A3D7870009554A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47869524A3D7870009554A /* ViewModel.swift */; };
+		3D47869824A3D97F0009554A /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D47869724A3D97F0009554A /* loading.json */; };
 		3DA9E35824A3D4CE00DA68DF /* ShortsReportBetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E35724A3D4CE00DA68DF /* ShortsReportBetaApp.swift */; };
 		3DA9E35A24A3D4CE00DA68DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E35924A3D4CE00DA68DF /* ContentView.swift */; };
 		3DA9E35C24A3D4D000DA68DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA9E35B24A3D4D000DA68DF /* Assets.xcassets */; };
 		3DA9E35F24A3D4D000DA68DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA9E35E24A3D4D000DA68DF /* Preview Assets.xcassets */; };
 		3DA9E36A24A3D4D000DA68DF /* ShortsReportBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E36924A3D4D000DA68DF /* ShortsReportBetaTests.swift */; };
 		3DA9E37524A3D4D000DA68DF /* ShortsReportBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E37424A3D4D000DA68DF /* ShortsReportBetaUITests.swift */; };
+		3DA9E38524A3D53400DA68DF /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E38424A3D53400DA68DF /* WeatherCardView.swift */; };
+		3DA9E38724A3D54E00DA68DF /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E38624A3D54E00DA68DF /* WeatherInfo.swift */; };
+		3DA9E38B24A3D5D900DA68DF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E38A24A3D5D900DA68DF /* NetworkManager.swift */; };
+		3DA9E38D24A3D5F000DA68DF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E38C24A3D5F000DA68DF /* LocationManager.swift */; };
+		3DA9E38F24A3D60E00DA68DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E38E24A3D60E00DA68DF /* Constants.swift */; };
+		3DA9E39124A3D63000DA68DF /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39024A3D63000DA68DF /* Color+Ext.swift */; };
+		3DA9E39324A3D65B00DA68DF /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39224A3D65B00DA68DF /* Double+Ext.swift */; };
+		3DA9E39524A3D66B00DA68DF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39424A3D66B00DA68DF /* Date+Ext.swift */; };
+		3DA9E39824A3D6B600DA68DF /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39724A3D6B600DA68DF /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D47869524A3D7870009554A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3D47869724A3D97F0009554A /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ShortsReportBeta/loading.json; sourceTree = SOURCE_ROOT; };
 		3DA9E35424A3D4CE00DA68DF /* ShortsReportBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShortsReportBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA9E35724A3D4CE00DA68DF /* ShortsReportBetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsReportBetaApp.swift; sourceTree = "<group>"; };
 		3DA9E35924A3D4CE00DA68DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +59,15 @@
 		3DA9E37024A3D4D000DA68DF /* ShortsReportBetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortsReportBetaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA9E37424A3D4D000DA68DF /* ShortsReportBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsReportBetaUITests.swift; sourceTree = "<group>"; };
 		3DA9E37624A3D4D000DA68DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DA9E38424A3D53400DA68DF /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
+		3DA9E38624A3D54E00DA68DF /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		3DA9E38A24A3D5D900DA68DF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3DA9E38C24A3D5F000DA68DF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3DA9E38E24A3D60E00DA68DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3DA9E39024A3D63000DA68DF /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		3DA9E39224A3D65B00DA68DF /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		3DA9E39424A3D66B00DA68DF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		3DA9E39724A3D6B600DA68DF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D47869424A3D7580009554A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +119,12 @@
 		3DA9E35624A3D4CE00DA68DF /* ShortsReportBeta */ = {
 			isa = PBXGroup;
 			children = (
+				3DA9E38224A3D4FE00DA68DF /* Views */,
+				3DA9E39624A3D6A100DA68DF /* ViewRepresentables */,
+				3DA9E38324A3D51200DA68DF /* Model */,
+				3DA9E38824A3D59200DA68DF /* Managers */,
+				3DA9E38924A3D59D00DA68DF /* Support */,
 				3DA9E35724A3D4CE00DA68DF /* ShortsReportBetaApp.swift */,
-				3DA9E35924A3D4CE00DA68DF /* ContentView.swift */,
 				3DA9E35B24A3D4D000DA68DF /* Assets.xcassets */,
 				3DA9E36024A3D4D000DA68DF /* Info.plist */,
 				3DA9E35D24A3D4D000DA68DF /* Preview Content */,
@@ -107,6 +135,7 @@
 		3DA9E35D24A3D4D000DA68DF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				3D47869724A3D97F0009554A /* loading.json */,
 				3DA9E35E24A3D4D000DA68DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -130,6 +159,52 @@
 			path = ShortsReportBetaUITests;
 			sourceTree = "<group>";
 		};
+		3DA9E38224A3D4FE00DA68DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DA9E35924A3D4CE00DA68DF /* ContentView.swift */,
+				3DA9E38424A3D53400DA68DF /* WeatherCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3DA9E38324A3D51200DA68DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DA9E38624A3D54E00DA68DF /* WeatherInfo.swift */,
+				3D47869524A3D7870009554A /* ViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DA9E38824A3D59200DA68DF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3DA9E38A24A3D5D900DA68DF /* NetworkManager.swift */,
+				3DA9E38C24A3D5F000DA68DF /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3DA9E38924A3D59D00DA68DF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				3DA9E38E24A3D60E00DA68DF /* Constants.swift */,
+				3DA9E39024A3D63000DA68DF /* Color+Ext.swift */,
+				3DA9E39224A3D65B00DA68DF /* Double+Ext.swift */,
+				3DA9E39424A3D66B00DA68DF /* Date+Ext.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		3DA9E39624A3D6A100DA68DF /* ViewRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				3DA9E39724A3D6B600DA68DF /* LottieView.swift */,
+			);
+			path = ViewRepresentables;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +221,9 @@
 			dependencies = (
 			);
 			name = ShortsReportBeta;
+			packageProductDependencies = (
+				3D47869324A3D7580009554A /* Lottie */,
+			);
 			productName = ShortsReportBeta;
 			productReference = 3DA9E35424A3D4CE00DA68DF /* ShortsReportBeta.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +295,9 @@
 				Base,
 			);
 			mainGroup = 3DA9E34B24A3D4CE00DA68DF;
+			packageReferences = (
+				3D47869224A3D7580009554A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 3DA9E35524A3D4CE00DA68DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +316,7 @@
 			files = (
 				3DA9E35F24A3D4D000DA68DF /* Preview Assets.xcassets in Resources */,
 				3DA9E35C24A3D4D000DA68DF /* Assets.xcassets in Resources */,
+				3D47869824A3D97F0009554A /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +341,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DA9E38724A3D54E00DA68DF /* WeatherInfo.swift in Sources */,
 				3DA9E35A24A3D4CE00DA68DF /* ContentView.swift in Sources */,
+				3DA9E38D24A3D5F000DA68DF /* LocationManager.swift in Sources */,
+				3DA9E38B24A3D5D900DA68DF /* NetworkManager.swift in Sources */,
+				3DA9E38F24A3D60E00DA68DF /* Constants.swift in Sources */,
+				3DA9E39124A3D63000DA68DF /* Color+Ext.swift in Sources */,
+				3DA9E38524A3D53400DA68DF /* WeatherCardView.swift in Sources */,
 				3DA9E35824A3D4CE00DA68DF /* ShortsReportBetaApp.swift in Sources */,
+				3DA9E39324A3D65B00DA68DF /* Double+Ext.swift in Sources */,
+				3DA9E39824A3D6B600DA68DF /* LottieView.swift in Sources */,
+				3D47869624A3D7870009554A /* ViewModel.swift in Sources */,
+				3DA9E39524A3D66B00DA68DF /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +672,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D47869224A3D7580009554A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D47869324A3D7580009554A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D47869224A3D7580009554A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3DA9E34C24A3D4CE00DA68DF /* Project object */;
 }
