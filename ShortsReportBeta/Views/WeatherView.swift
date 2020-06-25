@@ -25,9 +25,13 @@ struct WeatherView: View {
                 WeatherCardView(currentWeather: weather, shortsImage: viewModel.shortsImage, shortsStatus: viewModel.canWearShorts.rawValue)
                     .padding(.horizontal)
                 
-//                ForEach(weather.hourly, id: \.self) { hourWeather in
-//                    HourlyWeatherView(date: hourWeather.dt, temp: hourWeather.temp)
-//                }
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        ForEach(weather.hourly) { hourWeather in
+                            HourlyWeatherView(date: hourWeather.id, temp: hourWeather.temp)
+                        }
+                    }
+                }
             }
             
 

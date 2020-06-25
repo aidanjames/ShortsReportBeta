@@ -43,12 +43,12 @@ struct WeatherCardView: View {
     }
 }
 
-struct WeatherCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            WeatherCardView(currentWeather: MockData.weatherPreviewData(), shortsImage: Image("shorts1"), shortsStatus: "Shorts ON!")
-                .previewLayout(.sizeThatFits)
-        }
-    }
-}
+//struct WeatherCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            WeatherCardView(currentWeather: MockData.weatherPreviewData(), shortsImage: Image("shorts1"), shortsStatus: "Shorts ON!")
+//                .previewLayout(.sizeThatFits)
+//        }
+//    }
+//}
 

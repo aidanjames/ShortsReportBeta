@@ -11,7 +11,7 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     
-    @Published var weather: OneCallWeather? = MockData.weatherPreviewData()
+    @Published var weather: OneCallWeather? //= MockData.weatherPreviewData()
     
     @Published var canWearShorts: ShortsStatus = .analysing {
         didSet {
