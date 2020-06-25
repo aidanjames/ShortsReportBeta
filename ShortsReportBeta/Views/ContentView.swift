@@ -17,22 +17,11 @@ struct ContentView: View {
                 if viewModel.showingLoadingAnimation {
                     LottieView(filename: "loading")
                 } else {
-                    
-                    WeatherCardView(currentWeather: viewModel.weather, locationName: viewModel.lastKnownTown)
+                    WeatherView(viewModel: viewModel)
+                    Spacer()
+                    Button("Get Weather") { self.viewModel.updateWeather() }
                         .padding()
-                    viewModel.shortsImage
-                        .resizable()
-                        .scaledToFit()
-                    HStack(spacing: 0) {
-                        Text("Shorts status: ")
-                        Text("\(viewModel.canWearShorts.rawValue)").bold()
-                    }
-
                 }
-                
-                Spacer()
-                Button("Get Weather") { self.viewModel.updateWeather() }
-                    .padding()
             }
             .navigationBarTitle("Shorts report")
             .onAppear() {
@@ -59,4 +48,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(viewModel: ViewModel())
     }
 }
+
+
 

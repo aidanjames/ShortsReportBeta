@@ -11,7 +11,7 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     
-    @Published var weather: OneCallWeather?
+    @Published var weather: OneCallWeather? = MockData.weatherPreviewData()
     
     @Published var canWearShorts: ShortsStatus = .analysing {
         didSet {
@@ -27,7 +27,7 @@ class ViewModel: ObservableObject {
         }
     }
     
-    @Published var shortsImage: Image = Image("question")
+    @Published var shortsImage: Image = Image("shorts1")
     @Published var showingLoadingAnimation = true
     @Published var showingErrorAlert = false
     @Published var errorAlertMessage = ""
@@ -44,7 +44,7 @@ class ViewModel: ObservableObject {
         }
     }
     
-    @Published var lastKnownTown: String = ""
+    @Published var lastKnownTown: String = "Loading"
     
     
     func updateWeather() {
@@ -85,6 +85,17 @@ class ViewModel: ObservableObject {
                 do {
                     self.weather = try decoder.decode(OneCallWeather.self, from: data)
 //                    print(self.weather!)
+                    
+                    print("******* HOURLY WEATHER ******")
+                    for hourlyWeather in self.weather!.hourly {
+                        print(hourlyWeather)
+                    }
+                    
+                    print("******* DAILY WEATHER ******")
+                    for dailyWeather in self.weather!.daily {
+                        print(dailyWeather)
+                    }
+                    
                     UserDefaults.standard.set(Date(), forKey: DefaultsKeys.date)
                     self.complicatedAlgorithym()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -132,7 +143,7 @@ class ViewModel: ObservableObject {
 
 
 enum ShortsStatus: String {
-    case analysing = "Analysing complicated data"
+    case analysing = "Be patient"
     case definitely = "Shorts ON!"
     case maybe = "Can wear"
     case onlyShortsProfessionals = "Professionals only"

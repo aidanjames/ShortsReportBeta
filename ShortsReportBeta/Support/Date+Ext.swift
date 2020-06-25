@@ -19,4 +19,13 @@ extension Date {
         return newDateMinutes - oldDateMinutes
     }
     
+    
+    func shortDateString() -> String {
+        let formatter = DateFormatter()
+//        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: self)
+    }
+    
 }
