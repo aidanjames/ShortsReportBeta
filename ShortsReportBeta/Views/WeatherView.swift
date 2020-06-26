@@ -25,10 +25,20 @@ struct WeatherView: View {
                 WeatherCardView(currentWeather: weather, shortsImage: viewModel.shortsImage, shortsStatus: viewModel.canWearShorts.rawValue)
                     .padding(.horizontal)
                 
+                Text("Hourly")
                 ScrollView(.horizontal) {
                     LazyHStack {
                         ForEach(weather.hourly) { hourWeather in
                             HourlyWeatherView(date: hourWeather.id, temp: hourWeather.temp)
+                        }
+                    }
+                }
+                
+                Text("Daily")
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        ForEach(weather.daily) { dailyWeather in
+                            DailyWeatherView(date: dailyWeather.id, temp: dailyWeather.temp.max)
                         }
                     }
                 }

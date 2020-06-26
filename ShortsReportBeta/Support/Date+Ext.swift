@@ -20,9 +20,16 @@ extension Date {
     }
     
     
-    func shortDateString() -> String {
+    func shortTimeString() -> String {
         let formatter = DateFormatter()
-//        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: self)
+    }
+    
+    func shortDateAndTimeString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
         formatter.timeStyle = .short
         
         return formatter.string(from: self)

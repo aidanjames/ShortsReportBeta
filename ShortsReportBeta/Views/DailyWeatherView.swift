@@ -1,20 +1,19 @@
 //
-//  HourlyWeatherView.swift
+//  DailyWeatherView.swift
 //  ShortsReportBeta
 //
-//  Created by Aidan Pendlebury on 25/06/2020.
+//  Created by Aidan Pendlebury on 26/06/2020.
 //
 
 import SwiftUI
 
-struct HourlyWeatherView: View {
-    
+struct DailyWeatherView: View {
     let date: Double
     let temp: Double
     
     var body: some View {
         VStack {
-            Text(Date(timeIntervalSince1970: date).shortTimeString())
+            Text(Date(timeIntervalSince1970: date).shortDateAndTimeString())
             Text("\(temp.kelvinAsCelciusString())°C").fontWeight(.heavy)
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -24,8 +23,8 @@ struct HourlyWeatherView: View {
     }
 }
 
-struct HourlyWeatherView_Previews: PreviewProvider {
+struct DailyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherView(date: 1593115200.0, temp: 301.86)
+        DailyWeatherView(date: 1593115200.0, temp: 301.86)
     }
 }
