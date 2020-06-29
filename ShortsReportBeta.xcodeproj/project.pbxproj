@@ -171,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				3DA9E35924A3D4CE00DA68DF /* ContentView.swift */,
-				3DA9E38424A3D53400DA68DF /* WeatherCardView.swift */,
 				3D47869924A3E1A40009554A /* WeatherView.swift */,
+				3DA9E38424A3D53400DA68DF /* WeatherCardView.swift */,
 				3D47869B24A3E66F0009554A /* LocationView.swift */,
 				3D715B3624A53EDB002C722C /* HourlyWeatherView.swift */,
 				3D065E2F24A66B870035DF2C /* DailyWeatherView.swift */,

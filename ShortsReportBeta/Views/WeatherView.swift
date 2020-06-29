@@ -25,6 +25,9 @@ struct WeatherView: View {
                 WeatherCardView(currentWeather: weather, shortsImage: viewModel.shortsImage, shortsStatus: viewModel.canWearShorts.rawValue)
                     .padding(.horizontal)
                 
+                
+                Spacer()
+                
                 Text("Hourly")
                 ScrollView(.horizontal) {
                     LazyHStack {
@@ -42,6 +45,8 @@ struct WeatherView: View {
                         }
                     }
                 }
+                
+                Spacer()
             }
             
 

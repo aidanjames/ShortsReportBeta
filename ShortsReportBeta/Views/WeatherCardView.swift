@@ -33,12 +33,14 @@ struct WeatherCardView: View {
                 }
 
             HStack(spacing: 0) {
+                Spacer()
                 Text("Shorts status: ")
                 Text(shortsStatus).bold()
+                Spacer()
             }
         }
         .padding()
-        .background(Color(hex: "b1b493").opacity(0.5))
+        .background(Colors.primary.opacity(0.5))
         .cornerRadius(20)
     }
 }

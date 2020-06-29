@@ -18,7 +18,7 @@ struct HourlyWeatherView: View {
             Text("\(temp.kelvinAsCelciusString())°C").fontWeight(.heavy)
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-        .background(Color.green.opacity(0.5))
+        .background(Colors.primary.opacity(0.5))
         .cornerRadius(16)
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 5)
     }

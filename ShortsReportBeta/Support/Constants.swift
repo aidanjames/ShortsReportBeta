@@ -5,7 +5,7 @@
 //  Created by Aidan Pendlebury on 24/06/2020.
 //
 
-import Foundation
+import SwiftUI
 
 enum API {
     static let key = "012583e4f70d9bb3a88dccaba58090ca"
@@ -20,4 +20,9 @@ enum DefaultsKeys {
 
 enum SFSymbols {
     static let mapAndPin = "mappin.and.ellipse"
+}
+
+enum Colors {
+    static let primary = Color(hex: "b1b493")
+    static let secondary = Color(hex: "ffcb74")
 }
