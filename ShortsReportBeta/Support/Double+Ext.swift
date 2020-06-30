@@ -12,4 +12,9 @@ extension Double {
     func kelvinAsCelciusString() -> String { String(Int(self - 273.15)) }
     
     func kelvinAsFarenheightString() -> String { "TO DO" }
+    
+    
+    func kelvinAsCelciusDouble() -> Double { Double(self - 273.15) }
+    
+    func kelvinAsFarenheightDouble() -> Double { 0 }
 }

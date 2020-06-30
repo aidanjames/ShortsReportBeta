@@ -23,6 +23,8 @@ struct OneCallWeather: Codable {
         var windSpeed: Double
         var windDeg: Double
         fileprivate var weather: [Weather]
+        var rain: Rain?
+        
 
         var firstWeatherUnwrapped: Weather {
             if let first = weather.first {
@@ -40,6 +42,15 @@ struct OneCallWeather: Codable {
             case windSpeed = "windSpeed"
             case windDeg = "windDeg"
             case weather = "weather"
+            case rain = "rain"
+        }
+        
+        struct Rain: Codable {
+            var oneHr: Double?
+            
+            private enum CodingKeys: String, CodingKey {
+                case oneHr = "1h"
+            }
         }
 
     }
@@ -52,6 +63,8 @@ struct OneCallWeather: Codable {
         var windSpeed: Double
         var windDeg: Double
         fileprivate var weather: [Weather]
+        var rain: Double?
+
         
         private enum CodingKeys: String, CodingKey {
             case id = "dt"
@@ -61,6 +74,7 @@ struct OneCallWeather: Codable {
             case windSpeed = "windSpeed"
             case windDeg = "windDeg"
             case weather = "weather"
+            case rain = "rain"
         }
         
 
@@ -99,8 +113,11 @@ enum MockData {
 
     static func weatherPreviewData() -> OneCallWeather {
         let weather = OneCallWeather.Weather(main: "Clear", description: "clear sky", icon: "01n")
-        let current = OneCallWeather.WeatherSituation(id: 1560350192, temp: 298.99, feelsLike: 285.98, humidity: 93, windSpeed: 0.47, windDeg: 107.538, weather: [weather])
+        let current = OneCallWeather.WeatherSituation(id: 1560350192, temp: 298.99, feelsLike: 285.98, humidity: 93, windSpeed: 0.47, windDeg: 107.538, weather: [weather], rain: OneCallWeather.WeatherSituation.Rain(oneHr: 1.23))
+//        let current = OneCallWeather.WeatherSituation(id: 1560350192, temp: 298.99, feelsLike: 285.98, humidity: 93, windSpeed: 0.47, windDeg: 107.538, weather: [weather])
 
+        
+        
         let temp = OneCallWeather.DailyWeatherSituation.Temperature(min: 281.52, max: 295.56)
         let feelsLikeTemp = OneCallWeather.DailyWeatherSituation.FeelsLikeTemp(day: 296.45, night: 285.42, eve: 289.41, morn: 281.45)
         let dailyWeather = OneCallWeather.DailyWeatherSituation(id: 1560350192, temp: temp, feelsLike: feelsLikeTemp, humidity: 90, windSpeed: 0.25, windDeg: 107.538, weather: [weather])

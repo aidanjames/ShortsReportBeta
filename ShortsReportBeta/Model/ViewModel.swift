@@ -84,7 +84,8 @@ class ViewModel: ObservableObject {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
                     self.weather = try decoder.decode(OneCallWeather.self, from: data)
-//                    print(self.weather!)
+                    print("****** ALL WEATHER ******")
+                    print(self.weather!)
                     
                     print("******* HOURLY WEATHER ******")
                     for hourlyWeather in self.weather!.hourly {
@@ -119,10 +120,9 @@ class ViewModel: ObservableObject {
     
     private func complicatedAlgorithym() {
         guard weather != nil else { return }
-        
-        let feelsLike = weather!.current.feelsLike - 273.15
-        
-        switch feelsLike {
+               
+        // TODO: Change this to use kelvins instead so we don't have to adjust this for celcius/farenheight
+        switch weather!.current.feelsLike.kelvinAsCelciusDouble() {
         case ...5 :
             canWearShorts = .absolutelyNot
         case 5...13:
@@ -135,6 +135,11 @@ class ViewModel: ObservableObject {
             canWearShorts = .analysing
         }
         
+    }
+    
+    
+    func getShortsStatus(feelsLike: Double, rain: Double? = 0, wind: Double) -> ShortsStatus {
+        return .analysing
     }
     
 }
