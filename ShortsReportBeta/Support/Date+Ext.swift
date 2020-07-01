@@ -27,12 +27,34 @@ extension Date {
         return formatter.string(from: self)
     }
     
+    
     func shortDateAndTimeString() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
         
         return formatter.string(from: self)
+    }
+    
+    
+    func dayOfWeekString() -> String {
+        let number = Calendar.current.dateComponents([.weekday], from: self).weekday
+        switch number {
+        case 1:
+            return "Sun"
+        case 2:
+            return "Mon"
+        case 3:
+            return "Tue"
+        case 4:
+            return "Wed"
+        case 5:
+            return "Thu"
+        case 6:
+            return "Fri"
+        default:
+            return "Sat"
+        }
     }
     
 }

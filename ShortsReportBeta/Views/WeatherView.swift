@@ -10,7 +10,7 @@ import SwiftUI
 struct WeatherView: View {
     
     @ObservedObject var viewModel: ViewModel
-    
+       
     var body: some View {
         VStack {
                 
@@ -36,14 +36,17 @@ struct WeatherView: View {
                         }
                     }
                 }
-                
+                               
                 Text("Daily")
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
-                        ForEach(weather.daily) { dailyWeather in
-                            DailyWeatherView(date: dailyWeather.id, temp: dailyWeather.temp.max)
+                        // I'm deliberately skipping the first in the array as it's the current day which is already reported above.
+                        ForEach(1..<weather.daily.count) { index in
+                            let dailyWeather = weather.daily[index]
+                            DailyWeatherView(date: dailyWeather.id, temp: dailyWeather.temp.max, rain: dailyWeather.rain, icon: dailyWeather.firstWeatherUnwrapped.icon)
                         }
                     }
+                    .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 }
                 
                 Spacer()

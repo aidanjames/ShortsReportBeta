@@ -119,27 +119,61 @@ class ViewModel: ObservableObject {
     
     
     private func complicatedAlgorithym() {
-        guard weather != nil else { return }
-               
-        // TODO: Change this to use kelvins instead so we don't have to adjust this for celcius/farenheight
-        switch weather!.current.feelsLike.kelvinAsCelciusDouble() {
-        case ...5 :
-            canWearShorts = .absolutelyNot
-        case 5...13:
-            canWearShorts = .onlyShortsProfessionals
-        case 13...16:
-            canWearShorts = .maybe
-        case 16...:
-            canWearShorts = .definitely
-        default:
-            canWearShorts = .analysing
+        if let weather = weather {
+            self.canWearShorts = ViewModel.getShortsStatus(feelsLike: weather.current.feelsLike, rain: weather.current.rain?.oneHr)
         }
-        
     }
     
     
-    func getShortsStatus(feelsLike: Double, rain: Double? = 0, wind: Double) -> ShortsStatus {
-        return .analysing
+    static func getShortsStatus(feelsLike: Double, rain: Double? = 0) -> ShortsStatus {
+        
+        /*
+         Temp in Kelvins
+            5°c  = 278.15
+            10°c = 283.15
+            15°c = 288.15
+            20°c = 293.15
+            25°c = 298.15
+            30°c = 303.15
+         */
+        
+        var rainLevel = RainLevel.none
+        
+        if let rain = rain {
+            switch rain {
+            case ...2.4:
+                rainLevel = .low
+            case 2.5...7.61:
+                rainLevel = .moderate
+            case 7.61...:
+                rainLevel = .heavy
+            default:
+                rainLevel = .none
+            }
+        }
+        
+        if feelsLike >= 293.25 {
+            print("first")
+            return .definitely
+        } else if feelsLike >= 288.15 && (rainLevel == .low || rainLevel == .none) {
+            print("second")
+            return .definitely
+        } else if feelsLike >= 288.15 && rainLevel == .moderate {
+            print("third")
+            return .maybe
+        } else if feelsLike >= 288.15 && rainLevel == .heavy {
+            print("fourth")
+            return .onlyShortsProfessionals
+        } else if feelsLike >= 283.15 && rainLevel == .none {
+            print("fifth")
+            return .maybe
+        } else if feelsLike >= 283.15 && rainLevel == .low {
+            print("sixth")
+            return .onlyShortsProfessionals
+        } else {
+            print("seventh")
+            return .absolutelyNot
+        }
     }
     
 }
@@ -151,7 +185,14 @@ enum ShortsStatus: String {
     case analysing = "Be patient"
     case definitely = "Shorts ON!"
     case maybe = "Can wear"
-    case onlyShortsProfessionals = "Professionals only"
+    case onlyShortsProfessionals = "Not recommended"
     case absolutelyNot = "No fucking way"
+}
+
+enum RainLevel: String {
+    case none
+    case low
+    case moderate
+    case heavy
 }
 

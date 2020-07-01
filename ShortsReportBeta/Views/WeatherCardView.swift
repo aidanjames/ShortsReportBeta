@@ -25,6 +25,9 @@ struct WeatherCardView: View {
                         }
                         Text("Feels like: \((currentWeather?.current.feelsLike ?? 0).kelvinAsCelciusString())°").font(.caption)
                             .foregroundColor(.secondary)
+                        if let rain = currentWeather?.current.rain?.oneHr {
+                            Text("It's raining ☹️ \(rain)").font(.caption).foregroundColor(.secondary)
+                        }
 
                     }
                     shortsImage
@@ -45,12 +48,12 @@ struct WeatherCardView: View {
     }
 }
 
-//struct WeatherCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            WeatherCardView(currentWeather: MockData.weatherPreviewData(), shortsImage: Image("shorts1"), shortsStatus: "Shorts ON!")
-//                .previewLayout(.sizeThatFits)
-//        }
-//    }
-//}
+struct WeatherCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            WeatherCardView(currentWeather: MockData.weatherPreviewData(), shortsImage: Image("shorts1"), shortsStatus: "Shorts ON!")
+                .previewLayout(.sizeThatFits)
+        }
+    }
+}
 

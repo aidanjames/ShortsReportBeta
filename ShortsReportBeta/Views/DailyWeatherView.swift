@@ -10,11 +10,17 @@ import SwiftUI
 struct DailyWeatherView: View {
     let date: Double
     let temp: Double
+    let rain: Double?
+    let icon: String
     
     var body: some View {
-        VStack {
-            Text(Date(timeIntervalSince1970: date).shortDateAndTimeString())
-            Text("\(temp.kelvinAsCelciusString())°C").fontWeight(.heavy)
+        VStack(alignment: .leading) {
+            Text(Date(timeIntervalSince1970: date).dayOfWeekString()).bold()
+            HStack {
+                Image(icon)
+                Text("\(temp.kelvinAsCelciusString())°C").fontWeight(.heavy).padding(.trailing)
+            }
+            Text("\(ViewModel.getShortsStatus(feelsLike: temp, rain: rain).rawValue)").bold()
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         .background(Colors.primary.opacity(0.5))
@@ -25,6 +31,6 @@ struct DailyWeatherView: View {
 
 struct DailyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherView(date: 1593115200.0, temp: 301.86)
+        DailyWeatherView(date: 1593115200.0, temp: 301.86, rain: 3.5, icon: "03d")
     }
 }
