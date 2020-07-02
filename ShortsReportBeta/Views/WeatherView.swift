@@ -38,7 +38,7 @@ struct WeatherView: View {
                         }
                     }
                 }
-                               
+                .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 Text("The next week...")
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
