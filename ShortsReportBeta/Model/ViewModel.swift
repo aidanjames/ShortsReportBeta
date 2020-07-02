@@ -63,11 +63,15 @@ class ViewModel: ObservableObject {
         guard currentLocation != nil else { return }
         self.locationManager.getPlace(for: self.currentLocation!) { placemark in
             guard let place = placemark else { return }
-            if let town = place.subLocality {
-                self.lastKnownTown = town
-            } else if let city = place.locality {
+            
+            if let city = place.locality {
                 self.lastKnownTown = city
             }
+//            if let town = place.subLocality {
+//                self.lastKnownTown = town
+//            } else if let city = place.locality {
+//                self.lastKnownTown = city
+//            }
         }
     }
     

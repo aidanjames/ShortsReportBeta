@@ -28,16 +28,18 @@ struct WeatherView: View {
                 
                 Spacer()
                 
-                Text("Hourly")
-                ScrollView(.horizontal) {
+                Text("The next 6 hours...")
+                ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
-                        ForEach(weather.hourly) { hourWeather in
-                            HourlyWeatherView(date: hourWeather.id, temp: hourWeather.temp)
+                        // I'm deliberately skipping the first in the array as it's the current hour which is already reported above.
+                        ForEach(1..<7) { index in
+                            let hourWeather = weather.hourly[index]
+                            HourlyWeatherView(date: hourWeather.id, temp: hourWeather.temp, rain: hourWeather.rain?.oneHr, icon: hourWeather.firstWeatherUnwrapped.icon)
                         }
                     }
                 }
                                
-                Text("Daily")
+                Text("The next week...")
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         // I'm deliberately skipping the first in the array as it's the current day which is already reported above.

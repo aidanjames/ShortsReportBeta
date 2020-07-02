@@ -12,12 +12,12 @@ struct LocationView: View {
     let location: String
     
     var body: some View {
-        Button(action: {} ) {
+//        Button(action: {} ) {
             HStack {
                 Image(systemName: SFSymbols.mapAndPin)
                 Text(location).fontWeight(.black)
             }
-        }
+//        }
 
     }
     
