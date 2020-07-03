@@ -10,6 +10,7 @@ import SwiftUI
 struct DailyWeatherView: View {
     let date: Double
     let temp: Double
+    let feelsLikeTemp: Double
     let rain: Double?
     let icon: String
     
@@ -20,7 +21,7 @@ struct DailyWeatherView: View {
                 Image(icon)
                 Text("\(temp.kelvinAsCelciusString())°C").fontWeight(.heavy).padding(.trailing)
             }
-            Text("\(ViewModel.getShortsStatus(feelsLike: temp, rain: rain).rawValue)").bold()
+            Text("\(ViewModel.getShortsStatus(feelsLike: feelsLikeTemp, rain: rain).rawValue)").bold()
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         .background(Colors.primary.opacity(0.5))
@@ -31,6 +32,6 @@ struct DailyWeatherView: View {
 
 struct DailyWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherView(date: 1593115200.0, temp: 301.86, rain: 3.5, icon: "03d")
+        DailyWeatherView(date: 1593115200.0, temp: 301.86, feelsLikeTemp: 289.41, rain: 3.5, icon: "03d")
     }
 }
