@@ -124,6 +124,18 @@ enum MockData {
 
         return OneCallWeather(current: current, hourly: [current], daily: [dailyWeather])
     }
+    
+    
+    static func mockViewModel() -> ViewModel {
+        let returnModel = ViewModel()
+        returnModel.lastKnownTown = "Merton"
+        returnModel.canWearShorts = .maybe
+        returnModel.currentLocation = CLLocation(latitude: 100.4, longitude: 204.22)
+        returnModel.weather = MockData.weatherPreviewData()
+        
+        return returnModel
+        
+    }
 
 }
 

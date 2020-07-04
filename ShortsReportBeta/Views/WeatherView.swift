@@ -10,10 +10,10 @@ import SwiftUI
 struct WeatherView: View {
     
     @ObservedObject var viewModel: ViewModel
-       
+    
     var body: some View {
         VStack {
-                
+            
             HStack {
                 LocationView(location: viewModel.lastKnownTown)
                     .padding(.leading)
@@ -24,7 +24,6 @@ struct WeatherView: View {
             if let weather = viewModel.weather {
                 WeatherCardView(currentWeather: weather, shortsImage: viewModel.shortsImage, shortsStatus: viewModel.canWearShorts.rawValue)
                     .padding(.horizontal)
-                
                 
                 Spacer()
                 
@@ -54,14 +53,14 @@ struct WeatherView: View {
                 Spacer()
             }
             
-
+            
         }
     }
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView(viewModel: ViewModel())
+        WeatherView(viewModel: MockData.mockViewModel())
     }
 }
 
