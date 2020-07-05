@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D065E3024A66B870035DF2C /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D065E2F24A66B870035DF2C /* DailyWeatherView.swift */; };
+		3D1FC5DD24B256DF00D2E01D /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1FC5DC24B256DF00D2E01D /* CurrentWeather.swift */; };
 		3D47869424A3D7580009554A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3D47869324A3D7580009554A /* Lottie */; };
 		3D47869624A3D7870009554A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47869524A3D7870009554A /* ViewModel.swift */; };
 		3D47869824A3D97F0009554A /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D47869724A3D97F0009554A /* loading.json */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		3D065E2F24A66B870035DF2C /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
+		3D1FC5DC24B256DF00D2E01D /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		3D47869524A3D7870009554A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3D47869724A3D97F0009554A /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ShortsReportBeta/loading.json; sourceTree = SOURCE_ROOT; };
 		3D47869924A3E1A40009554A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D1FC5DB24B256D200D2E01D /* NewUI */ = {
+			isa = PBXGroup;
+			children = (
+				3D1FC5DC24B256DF00D2E01D /* CurrentWeather.swift */,
+			);
+			path = NewUI;
+			sourceTree = "<group>";
+		};
 		3DA9E34B24A3D4CE00DA68DF = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		3DA9E38224A3D4FE00DA68DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D1FC5DB24B256D200D2E01D /* NewUI */,
 				3DA9E35924A3D4CE00DA68DF /* ContentView.swift */,
 				3D47869924A3E1A40009554A /* WeatherView.swift */,
 				3DA9E38424A3D53400DA68DF /* WeatherCardView.swift */,
@@ -361,6 +372,7 @@
 				3DA9E38F24A3D60E00DA68DF /* Constants.swift in Sources */,
 				3D47869A24A3E1A40009554A /* WeatherView.swift in Sources */,
 				3DA9E39124A3D63000DA68DF /* Color+Ext.swift in Sources */,
+				3D1FC5DD24B256DF00D2E01D /* CurrentWeather.swift in Sources */,
 				3DA9E38524A3D53400DA68DF /* WeatherCardView.swift in Sources */,
 				3DA9E35824A3D4CE00DA68DF /* ShortsReportBetaApp.swift in Sources */,
 				3DA9E39324A3D65B00DA68DF /* Double+Ext.swift in Sources */,

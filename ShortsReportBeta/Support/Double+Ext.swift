@@ -9,7 +9,7 @@ import Foundation
 
 extension Double {
     
-    func kelvinAsCelciusString() -> String { String(Int(self - 273.15)) }
+    func kelvinAsCelciusString() -> String { String(Int(self - 273.15)) + "°" }
     
     func kelvinAsFarenheightString() -> String { "TO DO" }
     
