@@ -19,7 +19,7 @@ struct DailyWeatherView: View {
             Text(Date(timeIntervalSince1970: date).dayOfWeekString()).bold()
             HStack {
                 Image(icon)
-                Text("\(temp.kelvinAsCelciusString())°C").fontWeight(.heavy).padding(.trailing)
+                Text("\(temp.kelvinAsCelciusString())").fontWeight(.heavy).padding(.trailing)
             }
             Text("\(ViewModel.getShortsStatus(feelsLike: feelsLikeTemp, rain: rain).rawValue)").bold()
         }

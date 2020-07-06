@@ -10,6 +10,7 @@ import SwiftUI
 struct WeatherView: View {
     
     @ObservedObject var viewModel: ViewModel
+    let timeOfDay = Date().timeOfDay()
     
     var body: some View {
         VStack {
@@ -27,18 +28,28 @@ struct WeatherView: View {
                 
                 Spacer()
                 
-                Text("The next 6 hours...")
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack {
-                        // I'm deliberately skipping the first in the array as it's the current hour which is already reported above.
-                        ForEach(1..<7) { index in
-                            let hourWeather = weather.hourly[index]
-                            HourlyWeatherView(date: hourWeather.id, temp: hourWeather.temp, feelsLikeTemp: hourWeather.feelsLike, rain: hourWeather.rain?.oneHr, icon: hourWeather.firstWeatherUnwrapped.icon)
+                
+                if timeOfDay != .night {
+                    
+                    HStack {
+                        if timeOfDay == .morning {
+                            // show hour view for 15:00
+                            if let afternoonWeather = viewModel.weather?.hourly.first(where: { Date(timeIntervalSince1970: $0.id).hourOfDay() == 15 } ) {
+                                HourlyWeatherView(timeOfDay: .afternoon, temp: afternoonWeather.temp, feelsLikeTemp: afternoonWeather.feelsLike, rain: afternoonWeather.rain?.oneHr, icon: afternoonWeather.firstWeatherUnwrapped.icon)
+
+                            }
+
+                        }
+                        // Show hour view for 19:00
+                        if let eveningWeather = viewModel.weather?.hourly.first(where: { Date(timeIntervalSince1970: $0.id).hourOfDay() == 18 } ) {
+                            HourlyWeatherView(timeOfDay: .night, temp: eveningWeather.temp, feelsLikeTemp: eveningWeather.feelsLike, rain: eveningWeather.rain?.oneHr, icon: eveningWeather.firstWeatherUnwrapped.icon)
+
                         }
                     }
+
                 }
-                .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                Text("The next week...")
+
+                Text("How about the next few days...").padding(.top)
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         // I'm deliberately skipping the first in the array as it's the current day which is already reported above.
@@ -55,6 +66,7 @@ struct WeatherView: View {
             
             
         }
+        .onAppear { print(timeOfDay) }
     }
 }
 

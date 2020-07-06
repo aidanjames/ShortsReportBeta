@@ -20,7 +20,7 @@ struct WeatherCardView: View {
                     VStack {
                         HStack {
                             Image("\(currentWeather?.current.firstWeatherUnwrapped.icon ?? "50d")")
-                            Text("\((currentWeather?.current.temp ?? 0).kelvinAsCelciusString())°").font(.largeTitle).bold()
+                            Text("\((currentWeather?.current.temp ?? 0).kelvinAsCelciusString())").font(.largeTitle).bold()
 
                         }
                         Text("Feels like: \((currentWeather?.current.feelsLike ?? 0).kelvinAsCelciusString())°").font(.caption)

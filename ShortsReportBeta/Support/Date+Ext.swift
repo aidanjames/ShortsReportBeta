@@ -57,4 +57,20 @@ extension Date {
         }
     }
     
+    
+    func hourOfDay() -> Int { Calendar.current.component(.hour, from: self) }
+    
+    
+    func timeOfDay() -> TimeOfDay {
+        let hour = self.hourOfDay()
+        
+        if hour <= 12 {
+            return .morning
+        } else if hour < 12 && hour <= 18 {
+            return .afternoon
+        }
+        
+        return .night
+    }
+    
 }
