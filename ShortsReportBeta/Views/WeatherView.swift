@@ -41,7 +41,7 @@ struct WeatherView: View {
 
                         }
                         // Show hour view for 19:00
-                        if let eveningWeather = viewModel.weather?.hourly.first(where: { Date(timeIntervalSince1970: $0.id).hourOfDay() == 18 } ) {
+                        if let eveningWeather = viewModel.weather?.hourly.first(where: { Date(timeIntervalSince1970: $0.id).hourOfDay() == 19 } ) {
                             HourlyWeatherView(timeOfDay: .night, temp: eveningWeather.temp, feelsLikeTemp: eveningWeather.feelsLike, rain: eveningWeather.rain?.oneHr, icon: eveningWeather.firstWeatherUnwrapped.icon)
 
                         }
@@ -66,7 +66,6 @@ struct WeatherView: View {
             
             
         }
-        .onAppear { print(timeOfDay) }
     }
 }
 

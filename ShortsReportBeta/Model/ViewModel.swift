@@ -84,18 +84,18 @@ class ViewModel: ObservableObject {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
                     self.weather = try decoder.decode(OneCallWeather.self, from: data)
-                    print("****** ALL WEATHER ******")
-                    print(self.weather!)
+//                    print("****** ALL WEATHER ******")
+//                    print(self.weather!)
                     
-                    print("******* HOURLY WEATHER ******")
-                    for hourlyWeather in self.weather!.hourly {
-                        print(hourlyWeather)
-                    }
+//                    print("******* HOURLY WEATHER ******")
+//                    for hourlyWeather in self.weather!.hourly {
+//                        print(hourlyWeather)
+//                    }
                     
-                    print("******* DAILY WEATHER ******")
-                    for dailyWeather in self.weather!.daily {
-                        print(dailyWeather)
-                    }
+//                    print("******* DAILY WEATHER ******")
+//                    for dailyWeather in self.weather!.daily {
+//                        print(dailyWeather)
+//                    }
                     
                     UserDefaults.standard.set(Date(), forKey: DefaultsKeys.date)
                     self.complicatedAlgorithym()
@@ -153,25 +153,18 @@ class ViewModel: ObservableObject {
         }
         
         if feelsLike >= 293.25 {
-            print("first")
             return .definitely
         } else if feelsLike >= 288.15 && (rainLevel == .low || rainLevel == .none) {
-            print("second")
             return .definitely
         } else if feelsLike >= 288.15 && rainLevel == .moderate {
-            print("third")
             return .maybe
         } else if feelsLike >= 288.15 && rainLevel == .heavy {
-            print("fourth")
             return .onlyShortsProfessionals
         } else if feelsLike >= 283.15 && rainLevel == .none {
-            print("fifth")
             return .maybe
         } else if feelsLike >= 283.15 && rainLevel == .low {
-            print("sixth")
             return .onlyShortsProfessionals
         } else {
-            print("seventh")
             return .absolutelyNot
         }
     }
