@@ -23,7 +23,7 @@ struct WeatherCardView: View {
                             Text("\((currentWeather?.current.temp ?? 0).kelvinAsCelciusString())").font(.largeTitle).bold()
 
                         }
-                        Text("Feels like: \((currentWeather?.current.feelsLike ?? 0).kelvinAsCelciusString())°").font(.caption)
+                        Text("Feels like: \((currentWeather?.current.feelsLike ?? 0).kelvinAsCelciusString())").font(.caption)
                             .foregroundColor(.secondary)
                         if let rain = currentWeather?.current.rain?.oneHr {
                             Text("It's raining ☹️ \(rain)").font(.caption).foregroundColor(.secondary)
