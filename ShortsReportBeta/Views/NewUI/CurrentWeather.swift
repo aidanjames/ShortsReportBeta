@@ -11,6 +11,7 @@ struct CurrentWeather: View {
     
     var shortsStatus: ShortsStatus = .definitely
     var currentWeather: OneCallWeather
+    @State private var bottomSheetOpen = false
     
     
     var body: some View {
@@ -40,11 +41,14 @@ struct CurrentWeather: View {
             
             Spacer()
             
-            Text("Rest of the week")
-                .frame(maxWidth: .infinity)
-                .padding(.top, 10)
-                .padding(.bottom, 50)
-                .background(Colors.secondary)
+            BottomSheetView(isOpen: $bottomSheetOpen, maxHeight: 500) {
+                Text("Rest of the week")
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 10)
+                    .padding(.bottom, 50)
+                    .background(Colors.secondary)
+            }
+            
         }
         .edgesIgnoringSafeArea(.all)
 

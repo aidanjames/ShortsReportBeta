@@ -30,6 +30,7 @@
 		3DA9E39324A3D65B00DA68DF /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39224A3D65B00DA68DF /* Double+Ext.swift */; };
 		3DA9E39524A3D66B00DA68DF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39424A3D66B00DA68DF /* Date+Ext.swift */; };
 		3DA9E39824A3D6B600DA68DF /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39724A3D6B600DA68DF /* LottieView.swift */; };
+		3DD1A23E24B7823000E7CEC1 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1A23D24B7823000E7CEC1 /* BottomSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		3DA9E39224A3D65B00DA68DF /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		3DA9E39424A3D66B00DA68DF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		3DA9E39724A3D6B600DA68DF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		3DD1A23D24B7823000E7CEC1 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1FC5DC24B256DF00D2E01D /* CurrentWeather.swift */,
+				3DD1A23D24B7823000E7CEC1 /* BottomSheetView.swift */,
 			);
 			path = NewUI;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				3D1FC5DD24B256DF00D2E01D /* CurrentWeather.swift in Sources */,
 				3DA9E38524A3D53400DA68DF /* WeatherCardView.swift in Sources */,
 				3DA9E35824A3D4CE00DA68DF /* ShortsReportBetaApp.swift in Sources */,
+				3DD1A23E24B7823000E7CEC1 /* BottomSheetView.swift in Sources */,
 				3DA9E39324A3D65B00DA68DF /* Double+Ext.swift in Sources */,
 				3DA9E39824A3D6B600DA68DF /* LottieView.swift in Sources */,
 				3D47869C24A3E66F0009554A /* LocationView.swift in Sources */,
