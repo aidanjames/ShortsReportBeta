@@ -38,10 +38,12 @@ struct CurrentWeather: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
 
-            
+            ShortsRatingView(shortsRating: 3)
+                .frame(maxWidth: 250)
+
             Spacer()
             
-            BottomSheetView(isOpen: $bottomSheetOpen, maxHeight: 500) {
+            BottomSheetView(isOpen: $bottomSheetOpen, maxHeight: 380) {
                 Text("Rest of the week")
                     .frame(maxWidth: .infinity)
                     .padding(.top, 10)

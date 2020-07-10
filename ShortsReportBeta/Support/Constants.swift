@@ -22,6 +22,11 @@ enum SFSymbols {
     static let mapAndPin = "mappin.and.ellipse"
 }
 
+enum Images {
+    static let shortsNoFill = Image("shortsNoFill")
+    static let shortsFill = Image("shortsFill")
+}
+
 enum Colors {
     static let primary = Color(hex: "b1b493")
     static let secondary = Color(hex: "ffcb74")

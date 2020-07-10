@@ -15,6 +15,7 @@
 		3D47869A24A3E1A40009554A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47869924A3E1A40009554A /* WeatherView.swift */; };
 		3D47869C24A3E66F0009554A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47869B24A3E66F0009554A /* LocationView.swift */; };
 		3D715B3724A53EDB002C722C /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D715B3624A53EDB002C722C /* HourlyWeatherView.swift */; };
+		3DA8956B24B8F0EB00409E0F /* ShortsRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8956A24B8F0EB00409E0F /* ShortsRatingView.swift */; };
 		3DA9E35824A3D4CE00DA68DF /* ShortsReportBetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E35724A3D4CE00DA68DF /* ShortsReportBetaApp.swift */; };
 		3DA9E35A24A3D4CE00DA68DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E35924A3D4CE00DA68DF /* ContentView.swift */; };
 		3DA9E35C24A3D4D000DA68DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA9E35B24A3D4D000DA68DF /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		3D47869924A3E1A40009554A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		3D47869B24A3E66F0009554A /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		3D715B3624A53EDB002C722C /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		3DA8956A24B8F0EB00409E0F /* ShortsRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsRatingView.swift; sourceTree = "<group>"; };
 		3DA9E35424A3D4CE00DA68DF /* ShortsReportBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShortsReportBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA9E35724A3D4CE00DA68DF /* ShortsReportBetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsReportBetaApp.swift; sourceTree = "<group>"; };
 		3DA9E35924A3D4CE00DA68DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				3D1FC5DC24B256DF00D2E01D /* CurrentWeather.swift */,
 				3DD1A23D24B7823000E7CEC1 /* BottomSheetView.swift */,
+				3DA8956A24B8F0EB00409E0F /* ShortsRatingView.swift */,
 			);
 			path = NewUI;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				3DA9E39324A3D65B00DA68DF /* Double+Ext.swift in Sources */,
 				3DA9E39824A3D6B600DA68DF /* LottieView.swift in Sources */,
 				3D47869C24A3E66F0009554A /* LocationView.swift in Sources */,
+				3DA8956B24B8F0EB00409E0F /* ShortsRatingView.swift in Sources */,
 				3D47869624A3D7870009554A /* ViewModel.swift in Sources */,
 				3DA9E39524A3D66B00DA68DF /* Date+Ext.swift in Sources */,
 				3D065E3024A66B870035DF2C /* DailyWeatherView.swift in Sources */,
