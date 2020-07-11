@@ -23,7 +23,7 @@ struct WeatherView: View {
             }
             
             if let weather = viewModel.weather {
-                WeatherCardView(currentWeather: weather, shortsImage: viewModel.shortsImage, shortsStatus: viewModel.canWearShorts.rawValue)
+                WeatherCardView(currentWeather: weather, shortsImage: viewModel.shortsImage, shortsStatus: viewModel.canWearShorts.rawValue, shortsRating: viewModel.shortsRating)
                     .padding(.horizontal)
                 
                 Spacer()

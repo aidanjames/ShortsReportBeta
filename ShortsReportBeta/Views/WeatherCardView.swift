@@ -12,6 +12,7 @@ struct WeatherCardView: View {
     var currentWeather: OneCallWeather?
     var shortsImage: Image
     var shortsStatus: String
+    var shortsRating: Int
     
     var body: some View {
         VStack {
@@ -34,13 +35,15 @@ struct WeatherCardView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
+            
+            ShortsRatingView(shortsRating: shortsRating)
 
-            HStack(spacing: 0) {
-                Spacer()
-                Text("Shorts status: ")
-                Text(shortsStatus).bold()
-                Spacer()
-            }
+//            HStack(spacing: 0) {
+//                Spacer()
+//                Text("Shorts status: ")
+//                Text(shortsStatus).bold()
+//                Spacer()
+//            }
         }
         .padding()
         .background(Colors.primary.opacity(0.5))
@@ -51,7 +54,7 @@ struct WeatherCardView: View {
 struct WeatherCardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WeatherCardView(currentWeather: MockData.weatherPreviewData(), shortsImage: Image("shorts1"), shortsStatus: "Shorts ON!")
+            WeatherCardView(currentWeather: MockData.weatherPreviewData(), shortsImage: Image("shorts1"), shortsStatus: "Shorts ON!", shortsRating: 4)
                 .previewLayout(.sizeThatFits)
         }
     }

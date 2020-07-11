@@ -27,6 +27,8 @@ class ViewModel: ObservableObject {
         }
     }
     
+    @Published var shortsRating = 0
+    
     @Published var shortsImage: Image = Image("shorts1")
     @Published var showingLoadingAnimation = true
     @Published var showingErrorAlert = false
@@ -84,18 +86,18 @@ class ViewModel: ObservableObject {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
                     self.weather = try decoder.decode(OneCallWeather.self, from: data)
-//                    print("****** ALL WEATHER ******")
-//                    print(self.weather!)
+                    //                    print("****** ALL WEATHER ******")
+                    //                    print(self.weather!)
                     
-//                    print("******* HOURLY WEATHER ******")
-//                    for hourlyWeather in self.weather!.hourly {
-//                        print(hourlyWeather)
-//                    }
+                    //                    print("******* HOURLY WEATHER ******")
+                    //                    for hourlyWeather in self.weather!.hourly {
+                    //                        print(hourlyWeather)
+                    //                    }
                     
-//                    print("******* DAILY WEATHER ******")
-//                    for dailyWeather in self.weather!.daily {
-//                        print(dailyWeather)
-//                    }
+                    //                    print("******* DAILY WEATHER ******")
+                    //                    for dailyWeather in self.weather!.daily {
+                    //                        print(dailyWeather)
+                    //                    }
                     
                     UserDefaults.standard.set(Date(), forKey: DefaultsKeys.date)
                     self.complicatedAlgorithym()
@@ -121,6 +123,7 @@ class ViewModel: ObservableObject {
     private func complicatedAlgorithym() {
         if let weather = weather {
             self.canWearShorts = ViewModel.getShortsStatus(feelsLike: weather.current.feelsLike, rain: weather.current.rain?.oneHr)
+            self.shortsRating = ViewModel.getShortsRating(feelsLike: weather.current.feelsLike, rain: weather.current.rain?.oneHr)
         }
     }
     
@@ -129,12 +132,12 @@ class ViewModel: ObservableObject {
         
         /*
          Temp in Kelvins
-            5°c  = 278.15
-            10°c = 283.15
-            15°c = 288.15
-            20°c = 293.15
-            25°c = 298.15
-            30°c = 303.15
+         5°c  = 278.15
+         10°c = 283.15
+         15°c = 288.15
+         20°c = 293.15
+         25°c = 298.15
+         30°c = 303.15
          */
         
         var rainLevel = RainLevel.none
@@ -169,7 +172,57 @@ class ViewModel: ObservableObject {
         }
     }
     
+    
+    
+    
+    static func getShortsRating(feelsLike: Double, rain: Double? = 0) -> Int {
+        
+        /*
+         Temp in Kelvins
+         5°c  = 278.15
+         10°c = 283.15
+         15°c = 288.15
+         20°c = 293.15
+         25°c = 298.15
+         30°c = 303.15
+         */
+        
+        var rainLevel = RainLevel.none
+        
+        if let rain = rain {
+            switch rain {
+            case ...2.4:
+                rainLevel = .low
+            case 2.5...7.61:
+                rainLevel = .moderate
+            case 7.61...:
+                rainLevel = .heavy
+            default:
+                rainLevel = .none
+            }
+        }
+        
+        if feelsLike >= 293.25 {
+            return 5
+        } else if feelsLike >= 288.15 && (rainLevel == .low || rainLevel == .none) {
+            return 5
+        } else if feelsLike >= 288.15 && rainLevel == .moderate {
+            return 4
+        } else if feelsLike >= 288.15 && rainLevel == .heavy {
+            return 4
+        } else if feelsLike >= 283.15 && rainLevel == .none {
+            return 3
+        } else if feelsLike >= 283.15 && rainLevel == .low {
+            return 3
+        } else {
+            return 1
+        }
+    }
+    
 }
+
+
+
 
 
 
