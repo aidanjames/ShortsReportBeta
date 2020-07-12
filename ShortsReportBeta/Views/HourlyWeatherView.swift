@@ -21,7 +21,6 @@ struct HourlyWeatherView: View {
                 Image(icon)
                 Text("\(temp.kelvinAsCelciusString())").fontWeight(.heavy)
             }
-//            Text(ViewModel.getShortsStatus(feelsLike: feelsLikeTemp, rain: rain).rawValue)
             ShortsRatingView(shortsRating: ViewModel.getShortsRating(feelsLike: feelsLikeTemp, rain: rain)).frame(maxWidth: 150)
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)

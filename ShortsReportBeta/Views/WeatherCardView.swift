@@ -21,7 +21,7 @@ struct WeatherCardView: View {
                     VStack {
                         HStack {
                             Image("\(currentWeather?.current.firstWeatherUnwrapped.icon ?? "50d")")
-                            Text("\((currentWeather?.current.temp ?? 0).kelvinAsCelciusString())").font(.largeTitle).bold()
+                            Text("\((currentWeather?.current.temp ?? 0).kelvinAsCelciusString())").font(.largeTitle).bold().frame(width: 100)
 
                         }
                         Text("Feels like: \((currentWeather?.current.feelsLike ?? 0).kelvinAsCelciusString())").font(.caption)
@@ -37,13 +37,6 @@ struct WeatherCardView: View {
                 }
             
             ShortsRatingView(shortsRating: shortsRating)
-
-//            HStack(spacing: 0) {
-//                Spacer()
-//                Text("Shorts status: ")
-//                Text(shortsStatus).bold()
-//                Spacer()
-//            }
         }
         .padding()
         .background(Colors.primary.opacity(0.5))
