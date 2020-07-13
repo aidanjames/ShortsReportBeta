@@ -112,7 +112,7 @@ struct OneCallWeather: Codable {
 enum MockData {
 
     static func weatherPreviewData() -> OneCallWeather {
-        let weather = OneCallWeather.Weather(main: "Clear", description: "clear sky", icon: "01n")
+        let weather = OneCallWeather.Weather(main: "Clear", description: "clear sky", icon: "10d")
         let current = OneCallWeather.WeatherSituation(id: 1560350192, temp: 298.99, feelsLike: 285.98, humidity: 93, windSpeed: 0.47, windDeg: 107.538, weather: [weather], rain: OneCallWeather.WeatherSituation.Rain(oneHr: 1.23))
 //        let current = OneCallWeather.WeatherSituation(id: 1560350192, temp: 298.99, feelsLike: 285.98, humidity: 93, windSpeed: 0.47, windDeg: 107.538, weather: [weather])
 
