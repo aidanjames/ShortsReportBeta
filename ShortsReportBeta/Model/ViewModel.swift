@@ -213,7 +213,7 @@ class ViewModel: ObservableObject {
         } else if feelsLike >= 283.15 && rainLevel == .none {
             return 3
         } else if feelsLike >= 283.15 && rainLevel == .low {
-            return 3
+            return 2
         } else {
             return 1
         }

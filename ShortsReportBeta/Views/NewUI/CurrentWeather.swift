@@ -49,28 +49,4 @@ struct CurrentWeather_Previews: PreviewProvider {
     }
 }
 
-struct WeatherRibbonView: View {
-    
-    var currentWeather: OneCallWeather
-    
-    var body: some View {
-        HStack(alignment: .top) {
-            Image(currentWeather.current.firstWeatherUnwrapped.icon)
-                .resizable()
-                .frame(width: 80, height: 80)
-            
-            VStack {
-                Text("\(currentWeather.current.temp.kelvinAsCelciusString())")
-                    .font(Font.system(size: 60))
-                    .fontWeight(.black)
-                Text("Feels like: \(currentWeather.current.feelsLike.kelvinAsCelciusString())")
-                    .foregroundColor(.secondary)
-                
-            }
-            Spacer()
-        }
-        .padding(.top, 50)
-        .padding(.bottom, 10)
-        .background(Color.red.opacity(0.5))
-    }
-}
+

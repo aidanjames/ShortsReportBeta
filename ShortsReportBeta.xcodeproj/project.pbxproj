@@ -32,6 +32,7 @@
 		3DA9E39524A3D66B00DA68DF /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39424A3D66B00DA68DF /* Date+Ext.swift */; };
 		3DA9E39824A3D6B600DA68DF /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9E39724A3D6B600DA68DF /* LottieView.swift */; };
 		3DD1A23E24B7823000E7CEC1 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1A23D24B7823000E7CEC1 /* BottomSheetView.swift */; };
+		3DEAC7D324BDF8640085B90E /* WeatherRibbonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAC7D224BDF8640085B90E /* WeatherRibbonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		3DA9E39424A3D66B00DA68DF /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		3DA9E39724A3D6B600DA68DF /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		3DD1A23D24B7823000E7CEC1 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		3DEAC7D224BDF8640085B90E /* WeatherRibbonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRibbonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1FC5DC24B256DF00D2E01D /* CurrentWeather.swift */,
+				3DEAC7D224BDF8640085B90E /* WeatherRibbonView.swift */,
 				3DD1A23D24B7823000E7CEC1 /* BottomSheetView.swift */,
 				3DA8956A24B8F0EB00409E0F /* ShortsRatingView.swift */,
 			);
@@ -387,6 +390,7 @@
 				3D47869C24A3E66F0009554A /* LocationView.swift in Sources */,
 				3DA8956B24B8F0EB00409E0F /* ShortsRatingView.swift in Sources */,
 				3D47869624A3D7870009554A /* ViewModel.swift in Sources */,
+				3DEAC7D324BDF8640085B90E /* WeatherRibbonView.swift in Sources */,
 				3DA9E39524A3D66B00DA68DF /* Date+Ext.swift in Sources */,
 				3D065E3024A66B870035DF2C /* DailyWeatherView.swift in Sources */,
 			);
